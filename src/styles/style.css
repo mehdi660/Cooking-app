@@ -1,0 +1,19 @@
+body {
+    margin: 0 auto;
+    padding: 0;
+    background: wheat;
+}
+
+.title h1 {
+    color: brown;
+    font-family: 'Roboto Condensed', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+}
+
+.plat-containter {
+    display: flex;
+    flex-wrap: wrap;
+}

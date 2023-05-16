@@ -1,3 +1,5 @@
+https://www.themealdb.com/api/json/v1/1/search.php?s
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

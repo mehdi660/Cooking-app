@@ -1,9 +1,14 @@
 import React from "react";
+import Title from "../components/Title";
+import Shearchbar from "../components/Shearchbar";
+import Plat from "../components/Plat";
 
 const Home = () => {
   return (
     <div>
-      <h1>Hello world!!</h1>
+      <Title />
+      <Shearchbar />
+      <Plat />
     </div>
   );
 };
