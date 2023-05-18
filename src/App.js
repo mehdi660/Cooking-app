@@ -19,9 +19,11 @@ const App = () => {
         placeholder="Tapez le nom d'un aliment (en anglais)"
       />
       <div className="meals-container">
-        {mealsData.map((meal) => (
-          <Card key={meal.idMeal} meal={meal} />
-        ))}
+        {mealsData
+          .sort((a, b) => a.strMeal.localeCompare(b.strMeal))
+          .map((meal) => (
+            <Card key={meal.idMeal} meal={meal} />
+          ))}
       </div>
     </div>
   );
