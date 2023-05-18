@@ -1,14 +1,24 @@
-import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import Card from "./components/Card";
+
 const App = () => {
+  const [mealsData, setMealsData] = useState([]);
+  useEffect(() => {
+    axios
+      .get("https://www.themealdb.com/api/json/v1/1/search.php?s")
+      .then((res) => setMealsData(res.data.meals));
+  }, []);
+
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="*" element={<Home />} />
-      </Routes>
-    </BrowserRouter>
+    <div className="app-container">
+      <h1>React Cooking App</h1>
+      <input type="text" placeholder="Tapez le nom d'un aliment (en anglais)" />
+      <div className="meals-container"></div>
+      {mealsData.map((meal) => (
+        <Card key={meal.idMeal} meal={meal} />
+      ))}
+    </div>
   );
 };
 

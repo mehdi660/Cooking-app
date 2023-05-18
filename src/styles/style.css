@@ -16,4 +16,10 @@ body {
 .plat-containter {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.card {
+    border: 1px solid red;
+    border-radius: 25px;
 }

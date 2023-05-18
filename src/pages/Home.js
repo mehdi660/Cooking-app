@@ -1,14 +1,12 @@
 import React from "react";
-import Title from "../components/Title";
-import Shearchbar from "../components/Shearchbar";
 import Plat from "../components/Plat";
+import Card from "../components/Card";
 
 const Home = () => {
   return (
     <div>
-      <Title />
-      <Shearchbar />
       <Plat />
+      <Card />
     </div>
   );
 };
