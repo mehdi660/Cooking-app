@@ -13,11 +13,16 @@ const App = () => {
   return (
     <div className="app-container">
       <h1>React Cooking App</h1>
-      <input type="text" placeholder="Tapez le nom d'un aliment (en anglais)" />
-      <div className="meals-container"></div>
-      {mealsData.map((meal) => (
-        <Card key={meal.idMeal} meal={meal} />
-      ))}
+      <input
+        id="shearch"
+        type="text"
+        placeholder="Tapez le nom d'un aliment (en anglais)"
+      />
+      <div className="meals-container">
+        {mealsData.map((meal) => (
+          <Card key={meal.idMeal} meal={meal} />
+        ))}
+      </div>
     </div>
   );
 };

@@ -4,22 +4,48 @@ body {
     background: wheat;
 }
 
-.title h1 {
-    color: brown;
-    font-family: 'Roboto Condensed', sans-serif;
+.app-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 60px;
-}
-
-.plat-containter {
-    display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
 }
 
-.card {
-    border: 1px solid red;
-    border-radius: 25px;
+.app-container input {
+    width: 300px;
+    height: 30px;
+    border: 1px solid brown;
+    border-radius: 5px;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+h1 {
+    color: brown;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.meals-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+    flex-wrap: wrap;
+    width: 100%;
+
+}
+
+.meals-container img {
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.meal-card {
+    border: 2px solid brown;
+    border-radius: 50px;
+    width: 20%;
+    margin-bottom: 20px;
+    padding: 30px;
+    text-align: center;
 }
