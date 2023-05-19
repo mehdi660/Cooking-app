@@ -8,21 +8,11 @@ const App = () => {
 
   useEffect(() => {
     axios
-      .get("https://www.themealdb.com/api/json/v1/1/search.php?s")
+      .get(
+        "https://www.themealdb.com/api/json/v1/1/search.php?s=" + searchValue
+      )
       .then((res) => setMealsData(res.data.meals));
-  }, []);
-
-  // Gestionnaire d'événements pour la saisie de recherche
-  const handleSearch = (event) => {
-    setSearchValue(event.target.value);
-  };
-
-  // Filtrer les plats en fonction de la valeur de recherche et les trier alphabétiquement
-  const filteredMeals = mealsData
-    .filter((meal) =>
-      meal.strMeal.toLowerCase().includes(searchValue.toLowerCase())
-    )
-    .sort((a, b) => a.strMeal.localeCompare(b.strMeal));
+  }, [searchValue]);
 
   return (
     <div className="app-container">
@@ -31,13 +21,13 @@ const App = () => {
         id="search"
         type="text"
         placeholder="Tapez le nom d'un aliment (en anglais)"
-        value={searchValue}
-        onChange={handleSearch}
+        onChange={(e) => setSearchValue(e.target.value)}
       />
       <div className="meals-container">
-        {filteredMeals.map((meal) => (
-          <Card key={meal.idMeal} meal={meal} />
-        ))}
+        {mealsData &&
+          mealsData
+            .slice(0, 24)
+            .map((meal) => <Card key={meal.idMeal} meal={meal} />)}
       </div>
     </div>
   );
